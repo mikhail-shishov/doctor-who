@@ -1,4 +1,10 @@
-<?php include 'components/header.php' ?>
+<?php
+$meta_title = 'Kontakt';
+$meta_description = 'Chcete dozvedieť viac? Kľudne zavolajte Doktorovi alebo ponechajte svoju otázku.';
+$og_image = '...';
+?>
+
+<?php include_once 'components/header.php' ?>
 <div class="contact-sect">
   <div class="container">
     <h1 class="h1">Chcete dozvedieť viac?</h1>
@@ -11,7 +17,7 @@
     <h2 class="h2">Pozor: Doktor môže byť v inej galaxie a pravdepodobne súčasne nemá dobrý signal.</h2>
     <h3 class="h3">Môžete ponechať svoju otázku a mail dole.</h3>
 
-    <form action="thank-you.html" method="post" id="contact-form" class="form">
+    <form action="thank-you.php" method="post" id="contact-form" class="form">
       <label class="form-label">
         <span class="text-input-name">Meno</span>
         <input type="text" class="text-input" placeholder="napr. John" id="name">
@@ -36,4 +42,4 @@
   </div>
 </div>
 
-<?php include 'components/footer.php' ?>
+<?php include_once 'components/footer.php' ?>

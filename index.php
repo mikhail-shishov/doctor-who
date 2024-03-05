@@ -1,4 +1,10 @@
-<?php include 'components/header.php' ?>
+<?php
+$meta_title = 'O Doktorovi';
+$meta_description = 'Základná informacia o Doktorovi a rase Pánov času.';
+$og_image = '...';
+?>
+
+<?php include_once 'components/header.php' ?>
 <section class="intro-sect">
   <div class="container">
     <h1 class="h1">Doctor Who</h1>
@@ -17,12 +23,11 @@
             už 60 rokov, lebo Doktora môžú hrať rôzné hercy.
           </p>
 
-          <a href="about.html" class="btn">Dozvedieť viac</a>
+          <a href="about.php" class="btn">Dozvedieť viac</a>
         </div>
       </div>
       <div class="col-6">
         <div class="about-doctor-grid">
-          <!-- kreatívny bod -->
           <a href="img/doctor/9.jpg" class="lightbox">
             <img src="img/doctor/9.jpg" loading="lazy" alt="" title="9th Doctor, played by Christopher Eccleston" />
           </a>
@@ -43,7 +48,6 @@
 <section class="enemy-sect">
   <div class="container">
     <h2 class="h2">Kto sú ho nepriateľia?</h2>
-    <!-- kreatívny bod -->
     <div class="splide enemy-splide">
       <div class="splide__track">
         <ul class="splide__list">
@@ -87,7 +91,7 @@
       </div>
     </div>
     <div class="enemy-btn-wrap">
-      <a href="enemy.html" class="btn">Dozvedieť viac</a>
+      <a href="enemy.php" class="btn">Dozvedieť viac</a>
     </div>
   </div>
 </section>
@@ -158,4 +162,4 @@
     </div>
   </div>
 </section>
-<?php include 'components/footer.php' ?>
+<?php include_once 'components/footer.php' ?>

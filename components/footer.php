@@ -7,12 +7,12 @@
                 <p><a href="mailto:mikhail.shishov@student.ukf.sk">mikhail.shishov@student.ukf.sk</a></p>
             </div>
             <div class="col-3">
-                <p><a href="index.html">Hlavná</a></p>
-                <p><a href="contact.html">Kontakt</a></p>
+                <p><a href="index.php">Hlavná</a></p>
+                <p><a href="contact.php">Kontakt</a></p>
             </div>
             <div class="col-3">
-                <p><a href="about.html">O Doktore</a></p>
-                <p><a href="enemy.html">Nepriateľia</a></p>
+                <p><a href="about.php">O Doktore</a></p>
+                <p><a href="enemy.php">Nepriateľia</a></p>
             </div>
         </div>
         <p class="copyright">

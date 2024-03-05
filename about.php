@@ -1,4 +1,10 @@
-<?php include 'components/header.php' ?>
+<?php
+$meta_title = 'O Doktorovi';
+$meta_description = 'Chcete dozvedieť viac? Kľudne zavolajte Doktorovi alebo ponechajte svoju otázku.';
+$og_image = '...';
+?>
+
+<?php include_once 'components/header.php' ?>
 
 <main class="main">
   <section class="about-page-sect">
@@ -143,4 +149,4 @@
       </div>
     </div>
   </section>
-  <?php include 'components/footer.php' ?>
+  <?php include_once 'components/footer.php' ?>

@@ -1,4 +1,10 @@
-<?php include 'components/header.php' ?>
+<?php
+$meta_title = 'Nepriateľia';
+$meta_description = 'Doktor má veľa nepriateľov, s ktorými neustále bojuje. Mnohé z nich predstavujú nebezpečenstvo pre ľudí, ale Doktor miluje ľudí a snaží sa ich chrániť.';
+$og_image = '...';
+?>
+
+<?php include_once 'components/header.php' ?>
 <div class="enemy-page-sect">
   <div class="container">
     <h1 class="h1">Nepriateľia</h1>
@@ -105,4 +111,4 @@
     </div>
   </div>
 </div>
-<?php include 'components/footer.php' ?>
+<?php include_once 'components/footer.php' ?>
