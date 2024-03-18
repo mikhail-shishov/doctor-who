@@ -21,8 +21,12 @@
     </div>
 </footer>
 
-<script src="js/simple-lightbox.min.js"></script>
-<script src="js/splide.min.js"></script>
+<?php if (isset($lightbox)) { ?>
+    <script src="js/simple-lightbox.min.js"></script>
+<?php }?>
+<?php if (isset($splide)) { ?>
+    <script src="js/splide.min.js"></script>
+<?php }?>
 <script src="js/scripts.js"></script>
 </body>
 

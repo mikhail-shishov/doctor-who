@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // simple lightbox
-  let lightbox = new SimpleLightbox('.lightbox', {});
+  if (document.querySelector('.lightbox')) {
+    let lightbox = new SimpleLightbox('.lightbox', {});
+  }
 
   // accordion
   accordion = document.querySelectorAll('.accordion-block');

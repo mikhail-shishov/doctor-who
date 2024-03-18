@@ -1,7 +1,8 @@
 <?php
 $meta_title = 'O Doktorovi';
 $meta_description = 'Základná informacia o Doktorovi a rase Pánov času.';
-$og_image = '...';
+$splide = 1;
+$lightbox = 1;
 ?>
 
 <?php include_once 'components/header.php' ?>

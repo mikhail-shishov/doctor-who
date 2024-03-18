@@ -1,7 +1,7 @@
 <?php
 $meta_title = 'Kontakt';
 $meta_description = 'Chcete dozvedieť viac? Kľudne zavolajte Doktorovi alebo ponechajte svoju otázku.';
-$og_image = '...';
+$og_image = 'img/pexels-philippe-donn-1169754.jpg';
 ?>
 
 <?php include_once 'components/header.php' ?>

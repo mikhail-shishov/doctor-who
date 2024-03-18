@@ -1,7 +1,6 @@
 <?php
 $meta_title = 'Ozveme sa';
 $meta_description = 'My sa Vám ozveme.';
-$og_image = '...';
 ?>
 
 <?php include_once 'components/header.php' ?>

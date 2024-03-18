@@ -1,7 +1,8 @@
 <?php
 $meta_title = 'O Doktorovi';
 $meta_description = 'Chcete dozvedieť viac? Kľudne zavolajte Doktorovi alebo ponechajte svoju otázku.';
-$og_image = '...';
+$og_image = 'img/doctor/9.jpg';
+$splide = 1;
 ?>
 
 <?php include_once 'components/header.php' ?>
@@ -120,7 +121,7 @@ $og_image = '...';
             <li class="splide__slide">
               <p class="doctor-name">Herec Christopher Eccleston ako Doktor</p>
               <div class="enemy-pic">
-                <img src="img/doctor/9.jpg" alt="Dalek" />
+                <img src="img/doctor/9.jpg" alt="Eccleston" />
               </div>
             </li>
             <li class="splide__slide">
@@ -129,19 +130,19 @@ $og_image = '...';
                 Je to najúspešnejší herec, ktorý hrál Doktora Kto, lebo on robil toto celkovo 6 rokov a bol v niekoľkych sezónach seriálu.
               </p>
               <div class="enemy-pic">
-                <img src="img/doctor/10.jpg" alt="Cybermen" />
+                <img src="img/doctor/10.jpg" alt="Tennant" />
               </div>
             </li>
             <li class="splide__slide">
               <p class="doctor-name">Herec Matt Smith ako Doktor</p>
               <div class="enemy-pic">
-                <img src="img/doctor/11.jpg" alt="Sontaran" />
+                <img src="img/doctor/11.jpg" alt="Smith" />
               </div>
             </li>
             <li class="splide__slide">
               <p class="doctor-name">Herec Peter Capaldi ako Doktor</p>
               <div class="enemy-pic">
-                <img src="img/doctor/12.jpg" alt="Ood" />
+                <img src="img/doctor/12.jpg" alt="Capaldi" />
               </div>
             </li>
           </ul>

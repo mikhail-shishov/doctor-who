@@ -1,7 +1,7 @@
 <?php
 $meta_title = 'Nepriateľia';
 $meta_description = 'Doktor má veľa nepriateľov, s ktorými neustále bojuje. Mnohé z nich predstavujú nebezpečenstvo pre ľudí, ale Doktor miluje ľudí a snaží sa ich chrániť.';
-$og_image = '...';
+$og_image = 'img/enemy/dalek.jpeg';
 ?>
 
 <?php include_once 'components/header.php' ?>
