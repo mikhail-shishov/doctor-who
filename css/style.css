@@ -121,6 +121,10 @@ iframe {
   text-decoration: underline;
 }
 
+.logo {
+  display: flex;
+}
+
 .row {
   display: flex;
 }
