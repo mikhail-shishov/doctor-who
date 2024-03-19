@@ -66,6 +66,10 @@
           <a href="contact.php" class="<?php if ($page == 'contact.php') {
                                           echo 'is-active';
                                         } ?>">Kontakt</a>
+
+          <div class="theme-switch">
+
+          </div>
         </nav>
       </div>
     </div>

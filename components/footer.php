@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <p>Vytvoril Mikhail Shishov &copy; 2023</p>
+                <p>Vytvoril Mikhail Shishov &copy; <?php echo date("Y"); ?></p>
                 <p><a href="mailto:mikhail.shishov@student.ukf.sk">mikhail.shishov@student.ukf.sk</a></p>
             </div>
             <div class="col-3">

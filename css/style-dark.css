@@ -1,0 +1,15 @@
+[data-theme="dark"] body {
+    background-color: var(--darkblue-1);
+}
+
+[data-theme="dark"] * {
+    color: var(--lightgrey);
+}
+
+[data-theme="dark"] .enemy-sect {
+    background-color: var(--black);
+}
+
+[data-theme="dark"]  .accordion-block {
+    border-color: var(--lightgrey);
+}
