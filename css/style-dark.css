@@ -3,13 +3,25 @@
 }
 
 [data-theme="dark"] * {
-    color: var(--lightgrey);
+    color: var(--lightgrey-1);
 }
 
-[data-theme="dark"] .enemy-sect {
+[data-theme="dark"] .enemy-sect, [data-theme="dark"] .header {
     background-color: var(--black);
 }
 
-[data-theme="dark"]  .accordion-block {
-    border-color: var(--lightgrey);
+[data-theme="dark"] .accordion-block {
+    border-color: var(--lightgrey-1);
+}
+
+[data-theme="dark"] .accordion-heading-name:after {
+    filter: invert(1);
+}
+
+[data-theme="dark"] .tab-btn {
+    border-color: var(--lightgrey-1);
+}
+
+[data-theme="dark"]  .table tr:first-of-type th {
+    background-color: var(--black);
 }

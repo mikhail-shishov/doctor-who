@@ -1,3 +1,51 @@
+// theme
+function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark, systemSettingLight }) {
+  if (localStorageTheme !== null) {
+    return localStorageTheme;
+  }
+
+  if (systemSettingDark.matches) {
+    return 'dark';
+  }
+
+  if (systemSettingLight.matches) {
+    return 'light';
+  }
+
+  return 'light';
+}
+
+function updateThemeOnHtmlEl({ theme }) {
+  document.querySelector('html').setAttribute('data-theme', theme);
+}
+
+const buttonDark = document.querySelector('[data-theme-toggle-dark]');
+const buttonLight = document.querySelector('[data-theme-toggle-light]');
+const localStorageTheme = localStorage.getItem('theme');
+const systemSettingDark = window.matchMedia('(prefers-color-scheme: dark)');
+const systemSettingLight = window.matchMedia('(prefers-color-scheme: light)');
+
+let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark, systemSettingLight });
+
+updateThemeOnHtmlEl({ theme: currentThemeSetting });
+
+buttonDark?.addEventListener('click', () => {
+  let newTheme = currentThemeSetting === 'dark';
+
+  localStorage.setItem('theme', 'dark');
+  updateThemeOnHtmlEl({ theme: 'dark' });
+
+  currentThemeSetting = newTheme;
+});
+buttonLight?.addEventListener('click', () => {
+  let newTheme = currentThemeSetting === 'light';
+
+  localStorage.setItem('theme', 'light');
+  updateThemeOnHtmlEl({ theme: 'light' });
+
+  currentThemeSetting = newTheme;
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   // hamburger
   let hamburger = document.querySelector('.burger');

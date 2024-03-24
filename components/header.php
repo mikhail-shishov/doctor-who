@@ -1,7 +1,20 @@
-<?php $page = basename($_SERVER['PHP_SELF']); ?>
+<?php 
+$page = basename($_SERVER['PHP_SELF']); 
+
+$theme = $_GET["theme"];
+?>
 
 <!DOCTYPE html>
-<html lang="sk">
+<html data-theme="light" id="html-dom" lang="sk">
+
+<script>
+var theme = 'light';
+var theme_local = localStorage.getItem('theme');
+if (theme !== null) {
+    theme = theme_local;
+}
+document.getElementById('html-dom').setAttribute('data-theme', theme);
+</script>
 
 <head>
   <meta charset="UTF-8" />
@@ -43,9 +56,11 @@
     <link rel="stylesheet" href="css/splide.min.css" />
   <?php } ?>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-dark.css" />
 </head>
 
 <body>
+  <!-- <header class="header" style="background-color: <?php echo $theme === "dark" ? "black" : "grey";?>"> -->
   <header class="header">
     <div class="container">
       <div class="header-wrap">
@@ -67,8 +82,10 @@
                                           echo 'is-active';
                                         } ?>">Kontakt</a>
 
-          <div class="theme-switch">
-
+          <div class="theme-switch-wrap">
+              <!-- <a href=<?php echo $theme === "dark" ? "?theme=light" : "?theme=dark" ;?>>Zmena témy</a> -->
+              <button type="button" class="theme-switch" data-theme-toggle-light>Svetlá téma</button>
+              <button type="button" class="theme-switch" data-theme-toggle-dark>Tmavá téma</button>
           </div>
         </nav>
       </div>

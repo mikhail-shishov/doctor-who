@@ -2,9 +2,10 @@
 
 :root {
   --black: #171717;
-  --lightgrey: #f1f1f1;
-  --purple: #8d0fc7;
+  --lightgrey-1: #f1f1f1;
+  --purple-1: #8d0fc7;
   --darkblue-1: #0d0b26;
+  --blue-1: #796eff;
 }
 
 * {
@@ -61,7 +62,7 @@ iframe {
 
 .btn {
   display: inline-block;
-  background-color: var(--purple);
+  background-color: var(--purple-1);
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -86,7 +87,7 @@ iframe {
 }
 
 .header {
-  background-color: var(--black);
+  background-color: var(--blue-1);
   padding: 10px 0;
   position: fixed;
   width: 100%;
@@ -108,7 +109,7 @@ iframe {
 }
 
 .header-nav a {
-  color: var(--lightgrey);
+  color: var(--lightgrey-1);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -120,6 +121,27 @@ iframe {
 .header-nav a:hover {
   color: white;
   text-decoration: underline;
+}
+
+.theme-switch {
+  font-size: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  cursor: pointer;
+}
+
+.theme-switch:first-of-type {
+  background-image: url(../img/sun.png);
+  background-color: white;
+}
+
+.theme-switch:last-of-type {
+  background-image: url(../img/moon.png);
 }
 
 .logo {
@@ -231,7 +253,7 @@ iframe {
 .enemy-sect {
   margin: 80px 0;
   padding: 80px 0;
-  background-color: var(--lightgrey);
+  background-color: var(--lightgrey-1);
 }
 
 .enemy-splide .splide__slide,
@@ -276,16 +298,16 @@ iframe {
 
 .enemy-splide .splide__arrow,
 .doctor-splide .splide__arrow {
-  background-color: var(--purple);
+  background-color: var(--purple-1);
 }
 
 .splide__pagination__page.is-active {
-  background-color: var(--purple);
+  background-color: var(--purple-1);
 }
 
 .enemy-splide .splide__arrow svg,
 .doctor-splide .splide__arrow svg {
-  fill: var(--lightgrey);
+  fill: var(--lightgrey-1);
 }
 
 .fact-sect {
@@ -403,7 +425,7 @@ iframe {
 }
 
 .table tr:first-of-type th {
-  background-color: var(--lightgrey);
+  background-color: var(--lightgrey-1);
 }
 
 .table tr:not(:first-of-type) th {
@@ -504,8 +526,8 @@ iframe {
 }
 
 .tab-btn.is-active {
-  background-color: var(--purple);
-  border-color: var(--purple);
+  background-color: var(--purple-1);
+  border-color: var(--purple-1);
   color: white;
 }
 
@@ -527,7 +549,7 @@ iframe {
 }
 
 .footer * {
-  color: var(--lightgrey);
+  color: var(--lightgrey-1);
 }
 
 .footer .copyright {
@@ -552,7 +574,7 @@ iframe {
     width: 48px;
     height: 40px;
     padding: 10px;
-    border: 1px solid var(--lightgrey);
+    border: 1px solid var(--lightgrey-1);
     background-color: var(--black);
     background-image: url(../img/icons8-hamburger.svg);
     background-size: 30px;
