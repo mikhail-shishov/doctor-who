@@ -1,7 +1,7 @@
 <?php 
 $page = basename($_SERVER['PHP_SELF']); 
 
-$theme = $_GET["theme"];
+// $theme = $_GET["theme"];
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ document.getElementById('html-dom').setAttribute('data-theme', theme);
 </head>
 
 <body>
-  <!-- <header class="header" style="background-color: <?php echo $theme === "dark" ? "black" : "grey";?>"> -->
+  <!-- <header class="header" style="background-color: <?php /* echo $theme === "dark" ? "black" : "grey";*/?>"> -->
   <header class="header">
     <div class="container">
       <div class="header-wrap">

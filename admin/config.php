@@ -1,0 +1,1 @@
+<?php define('DATABASE', ['HOST' => 'localhost', 'DBNAME' => 'doctor_who', 'PORT' => 3306, 'USER_NAME' => 'root', 'PASSWORD' => '']);
