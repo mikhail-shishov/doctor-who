@@ -77,7 +77,7 @@ document.getElementById('html-dom').setAttribute('data-theme', theme);
                                       } ?>">O Doktorovi</a>
           <a href="enemy.php" class="<?php if ($page == 'enemy.php') {
                                         echo 'is-active';
-                                      } ?>">Nepriateľia</a>
+                                      } ?>">Nepriatelia</a>
           <a href="contact.php" class="<?php if ($page == 'contact.php') {
                                           echo 'is-active';
                                         } ?>">Kontakt</a>
