@@ -83,7 +83,7 @@ document.getElementById('html-dom').setAttribute('data-theme', theme);
                                         } ?>">Kontakt</a>
 
           <div class="theme-switch-wrap">
-              <!-- <a href=<?php echo $theme === "dark" ? "?theme=light" : "?theme=dark" ;?>>Zmena témy</a> -->
+              <!-- <a href=<?php /* echo $theme === "dark" ? "?theme=light" : "?theme=dark" */ ;?>>Zmena témy</a> -->
               <button type="button" class="theme-switch" data-theme-toggle-light>Svetlá téma</button>
               <button type="button" class="theme-switch" data-theme-toggle-dark>Tmavá téma</button>
           </div>

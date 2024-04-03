@@ -1,13 +1,13 @@
 <?php
 
-namespace formular;
+namespace otazkyodpovede;
 define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__.'/config.php');
+require_once(__ROOT__ . '/config.php');
 
 use PDO;
 use PDOException;
 
-class Kontakt
+class QnA
 {
     private $conn;
     public function __construct()
@@ -24,21 +24,19 @@ class Kontakt
             die("Chyba pripojenia: " . $e->getMessage());
         }
     }
+    public function getQnA() {
+        $sql = "SELECT otazka, odpoved FROM qna";
+        $result = $this->conn->query($sql);
 
-    public function ulozitSpravu($meno, $email, $sprava)
-    {
-        $sql = "INSERT INTO udaje (meno, email, sprava) VALUE ('" . $meno . "', '" . $email . "', '" . $sprava . "')";
-        $statement = $this->conn->prepare($sql);
-        try {
-            $insert = $statement->execute();
-            http_response_code(200);
-            return $insert;
-        } catch (\Exception $exception) {
-            return http_response_code(404);
+        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+        
+        foreach ($rows as $row) {
+            echo "<div class='accordion-block'>";
+            echo "<button class='accordion-heading'><span class='accordion-heading-name'>" . $row["otazka"] . "</span></button>";
+            echo "<div class='accordion-text'>" . $row["odpoved"] . "</div>";
+            echo "</div>";
         }
     }
-    public function __destruct()
-    {
-        $this->conn = null;
-    }
 }
+
+$qna = new QnA();
