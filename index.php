@@ -48,7 +48,7 @@ $lightbox = 1;
 </section>
 <section class="enemy-sect">
   <div class="container">
-    <h2 class="h2">Kto sú ho nepriateľia?</h2>
+    <h2 class="h2">Kto sú ho nepriatelia?</h2>
     <div class="splide enemy-splide">
       <div class="splide__track">
         <ul class="splide__list">

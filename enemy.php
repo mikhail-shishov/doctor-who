@@ -1,5 +1,5 @@
 <?php
-$meta_title = 'Nepriateľia';
+$meta_title = 'Nepriatelia';
 $meta_description = 'Doktor má veľa nepriateľov, s ktorými neustále bojuje. Mnohé z nich predstavujú nebezpečenstvo pre ľudí, ale Doktor miluje ľudí a snaží sa ich chrániť.';
 $og_image = 'img/enemy/dalek.jpeg';
 ?>

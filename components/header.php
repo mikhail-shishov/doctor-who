@@ -79,8 +79,11 @@ $page = basename($_SERVER['PHP_SELF']);
                                         echo 'is-active';
                                       } ?>">Nepriatelia</a>
           <a href="qna.php" class="<?php if ($page == 'qna.php') {
-                                        echo 'is-active';
-                                      } ?>">FAQ</a>
+                                      echo 'is-active';
+                                    } ?>">FAQ</a>
+          <a href="feedback.php" class="<?php if ($page == 'feedback.php') {
+                                      echo 'is-active';
+                                    } ?>">Feedback</a>
           <a href="contact.php" class="<?php if ($page == 'contact.php') {
                                           echo 'is-active';
                                         } ?>">Kontakt</a>

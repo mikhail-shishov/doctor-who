@@ -133,6 +133,7 @@ iframe {
   height: 30px;
   border: 0;
   cursor: pointer;
+  border-radius: 30px;
 }
 
 .theme-switch:first-of-type {

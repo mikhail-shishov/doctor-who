@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="h2">Zaujimavosti</h2>
     <?php 
-    include_once 'admin/classes/qna.php';
+    include_once 'adm/classes/qna.php';
     $qna->getQnA();
     ?>
     </div>

@@ -17,7 +17,7 @@ $og_image = 'img/pexels-philippe-donn-1169754.jpg';
     <h2 class="h2">Pozor: Doktor môže byť v inej galaxie a pravdepodobne súčasne nemá dobrý signal.</h2>
     <h3 class="h3">Môžete ponechať svoju otázku a mail dole.</h3>
 
-    <form action="admin/spracovanieForm.php" method="post" id="contact-form" class="form">
+    <form action="adm/spracovanieForm.php" method="post" id="contact-form" class="form">
       <label class="form-label">
         <span class="text-input-name">Meno</span>
         <input type="text" class="text-input" placeholder="napr. John" id="meno" name="meno">

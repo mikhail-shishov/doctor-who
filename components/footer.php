@@ -6,14 +6,14 @@
                 <p>Vytvoril Mikhail Shishov &copy; <?php echo date("Y"); ?></p>
                 <p><a href="mailto:mikhail.shishov@student.ukf.sk">mikhail.shishov@student.ukf.sk</a></p>
             </div>
-            <div class="col-3">
+            <!-- <div class="col-3">
                 <p><a href="index.php">Hlavná</a></p>
                 <p><a href="contact.php">Kontakt</a></p>
             </div>
             <div class="col-3">
                 <p><a href="about.php">O Doktore</a></p>
                 <p><a href="enemy.php">Nepriateľia</a></p>
-            </div>
+            </div> -->
         </div>
         <p class="copyright">
             Toto je fan stránka. Práva na seriál patria <a href="https://www.bbc.com/" target="_blank" rel="nofollow noopener">BBC</a>.
