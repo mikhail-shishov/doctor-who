@@ -1,5 +1,5 @@
-<?php 
-$page = basename($_SERVER['PHP_SELF']); 
+<?php
+$page = basename($_SERVER['PHP_SELF']);
 
 // $theme = $_GET["theme"];
 ?>
@@ -8,12 +8,12 @@ $page = basename($_SERVER['PHP_SELF']);
 <html data-theme="light" id="html-dom" lang="sk">
 
 <script>
-var theme = 'light';
-var theme_local = localStorage.getItem('theme');
-if (theme !== null) {
+  var theme = 'light';
+  var theme_local = localStorage.getItem('theme');
+  if (theme !== null) {
     theme = theme_local;
-}
-document.getElementById('html-dom').setAttribute('data-theme', theme);
+  }
+  document.getElementById('html-dom').setAttribute('data-theme', theme);
 </script>
 
 <head>
@@ -60,7 +60,7 @@ document.getElementById('html-dom').setAttribute('data-theme', theme);
 </head>
 
 <body>
-  <!-- <header class="header" style="background-color: <?php /* echo $theme === "dark" ? "black" : "grey";*/?>"> -->
+  <!-- <header class="header" style="background-color: <?php /* echo $theme === "dark" ? "black" : "grey";*/ ?>"> -->
   <header class="header">
     <div class="container">
       <div class="header-wrap">
@@ -78,14 +78,17 @@ document.getElementById('html-dom').setAttribute('data-theme', theme);
           <a href="enemy.php" class="<?php if ($page == 'enemy.php') {
                                         echo 'is-active';
                                       } ?>">Nepriatelia</a>
+          <a href="qna.php" class="<?php if ($page == 'qna.php') {
+                                        echo 'is-active';
+                                      } ?>">FAQ</a>
           <a href="contact.php" class="<?php if ($page == 'contact.php') {
                                           echo 'is-active';
                                         } ?>">Kontakt</a>
 
           <div class="theme-switch-wrap">
-              <!-- <a href=<?php /* echo $theme === "dark" ? "?theme=light" : "?theme=dark" */ ;?>>Zmena témy</a> -->
-              <button type="button" class="theme-switch" data-theme-toggle-light>Svetlá téma</button>
-              <button type="button" class="theme-switch" data-theme-toggle-dark>Tmavá téma</button>
+            <!-- <a href=<?php /* echo $theme === "dark" ? "?theme=light" : "?theme=dark" */; ?>>Zmena témy</a> -->
+            <button type="button" class="theme-switch" data-theme-toggle-light>Svetlá téma</button>
+            <button type="button" class="theme-switch" data-theme-toggle-dark>Tmavá téma</button>
           </div>
         </nav>
       </div>
