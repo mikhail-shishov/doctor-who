@@ -32,7 +32,10 @@ class Users extends Database
             $statement->bindParam(4, $this->role);
             $statement->execute();
         } catch (Exception $e) {
-            echo "Chyba" . $e->getMessage();
+            echo "<div class='container'>";
+            echo "<div class='error-message'>Chyba: " . $e->getMessage();
+            echo "<br><a href='/register.php'>Späť</a></div>";
+            echo "</div>";
         } finally {
             $this->connection = null;
         }

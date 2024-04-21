@@ -31,6 +31,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/doctor-who/adm/enemy-list.php">Zoznam nepriateľov</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/doctor-who/index.php">Na stránku</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">

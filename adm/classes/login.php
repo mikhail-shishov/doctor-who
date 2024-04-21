@@ -14,5 +14,8 @@ try {
     header('Location: http://localhost/doctor-who/index.php');
 } catch (Exception $e) {
     http_response_code(404);
-    echo ("Chyba" . $e->getMessage());
+    echo "<div class='container'>";
+    echo "<div class='error-message'>Chyba: " . $e->getMessage();
+    echo "<br><a href='/doctor-who/login.php'>Späť</a></div>";
+    echo "</div>";
 }
