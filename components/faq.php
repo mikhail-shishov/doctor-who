@@ -3,7 +3,8 @@
     <h2 class="h2">Zaujimavosti</h2>
     <?php 
     include_once 'adm/classes/qna.php';
-    $qna->getQnA();
+    $qna = new QnA();
+    $qna->otazky($otazka, $odpoved);
     ?>
     </div>
 </div>

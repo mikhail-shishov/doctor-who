@@ -1,4 +1,4 @@
-<?php
+<?php define('__ROOT__', dirname(dirname(__FILE__)));
 
 // error_reporting(E_ALL);
 // ini_set("display_errors", "On");
