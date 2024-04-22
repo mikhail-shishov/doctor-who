@@ -81,7 +81,7 @@ class Users extends Database
                 echo "session sa spustil, ale nie je admin";
             }
         } else {
-            echo "nenašiel sa session";
+            // echo "nenašiel sa session";
             return false;
         }
     }

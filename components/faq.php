@@ -1,10 +1,9 @@
 <section class="fact-sect">
   <div class="container">
     <h2 class="h2">Zaujimavosti</h2>
-    <?php 
-    include_once 'adm/classes/qna.php';
+    <?php require_once 'adm/classes/qna.php';
     $qna = new QnA();
-    $qna->otazky($otazka, $odpoved);
+    $qna->getQnA();
     ?>
     </div>
 </div>
