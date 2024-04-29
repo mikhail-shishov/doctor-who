@@ -1,5 +1,5 @@
 <?php
-$meta_title = 'O Doktorovi';
+$meta_title = 'Hlavná';
 $meta_description = 'Základná informacia o Doktorovi a rase Pánov času.';
 $splide = 1;
 $lightbox = 1;

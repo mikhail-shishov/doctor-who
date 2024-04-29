@@ -6,6 +6,7 @@
         <li class="list-group-item"><a href="/doctor-who/adm/publication-list.php">Príspevky</a></li>
         <li class="list-group-item"><a href="/doctor-who/adm/doctor-list.php">Doktory</a></li>
         <li class="list-group-item"><a href="/doctor-who/adm/enemy-list.php">Nepriatelia</a></li>
+        <li class="list-group-item"><a href="/doctor-who/adm/qna.php">FAQ</a></li>
     </ul>
     <h2 class="mb-3">Administrativné prostredie</h2>
     <ul class="list-group">
