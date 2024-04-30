@@ -318,6 +318,7 @@ iframe {
 .accordion-block {
   border: 1px solid var(--black);
   border-radius: 8px;
+  position: relative;
 }
 
 .accordion-text {
@@ -542,6 +543,33 @@ iframe {
 
 .tab.is-active {
   display: block;
+}
+
+.link-edit-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 6px;
+}
+
+.link-edit-wrap a {
+  text-decoration: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  font-size: 0;
+}
+
+.link-edit {
+  background-image: url(../img/icons/edit.png);
+}
+
+.link-delete {
+  background-image: url(../img/icons/delete.png);
 }
 
 .footer {

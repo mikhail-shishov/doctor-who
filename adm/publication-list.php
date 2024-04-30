@@ -1,7 +1,7 @@
 <?php include_once 'components/header.php' ?>
 <div class="container">
     <h1 class="mb-4">Príspevky</h1>
-    <a href="/doctor-who/adm/publication-add.php" class="btn btn-primary">Prídať nový príspevok</a>
+    <a href="adm/publication-add.php" class="btn btn-primary">Prídať nový príspevok</a>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -18,14 +18,14 @@
                 <td>Test1</td>
                 <td>...</td>
                 <td>04.05.2024, admin</td>
-                <td><a href="">Upraviť</a><br><a href="">Zmazať</a></td>
+                <td><a href="">Editovať</a><br><a href="">Zmazať</a></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td>Test2</td>
                 <td>...</td>
                 <td>05.05.2024, admin</td>
-                <td><a href="">Upraviť</a><br><a href="">Zmazať</a></td>
+                <td><a href="">Editovať</a><br><a href="">Zmazať</a></td>
             </tr>
         </tbody>
     </table>

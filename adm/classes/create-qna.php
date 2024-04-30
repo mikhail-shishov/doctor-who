@@ -1,5 +1,5 @@
 <?php define('__ROOT__', dirname(dirname(__FILE__)));
-require_once(__ROOT__ . '/database.php');
+require_once(__ROOT__ . '/classes/database.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $db = new Database();

@@ -3,7 +3,7 @@
 // ini_set("display_errors", "On");
 require_once(__ROOT__ . '/classes/database.php');
 
-class QnA extends Database
+class doctor extends Database
 {
     protected $connection;
 
@@ -13,27 +13,29 @@ class QnA extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function updateQnA($id, $question, $answer)
+    public function updateDoctor($id, $doctor_name, $actor_name, $years_active, $doctor_desc)
     {
         if (!is_numeric($id)) {
             echo 'ID otázky musí byť číslo.';
             exit;
         }
-        $sql = "UPDATE qna SET otazka = :question, odpoved = :answer WHERE id = :id";
+        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, years_active = :years_active, doctor_desc = :doctor_desc WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
-        $statement->bindParam(':question', $question);
-        $statement->bindParam(':answer', $answer);
+        $statement->bindParam(':doctor_name', $doctor_name);
+        $statement->bindParam(':actor_name', $actor_name);
+        $statement->bindParam(':years_active', $years_active);
+        $statement->bindParam(':doctor_desc', $doctor_desc);
         $statement->execute();
     }
 
-    public function getQnAById($id)
+    public function getDoctorById($id)
     {
         if (!is_numeric($id)) {
             echo "ID otázky musí byť číslo.";
             exit;
         }
-        $sql = "SELECT * FROM qna WHERE id = :id";
+        $sql = "SELECT * FROM doctors WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
         $statement->execute();
@@ -41,9 +43,9 @@ class QnA extends Database
         return $row;
     }
 
-    public function getQnA()
+    public function getDoctor()
     {
-        $sql = "SELECT * FROM qna";
+        $sql = "SELECT * FROM doctors";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -59,27 +61,30 @@ class QnA extends Database
         }
     }
 
-    public function getQnA_adm()
+    public function getDoctor_adm()
     {
-        $sql = "SELECT * FROM qna";
+        $sql = "SELECT * FROM doctors";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $row) {
             echo "<tr>";
             echo "<th>" . $row["id"] . "</th>";
-            echo "<td style='width:260px'>" . $row["otazka"] . "</td>";
-            echo "<td>" . $row["odpoved"] . "</td>";
+            echo "<td><img width='250' src='data:image/jpg;base64," . base64_encode($row["actor_photo"]) . "'/></td>";
+            echo "<td style='width:150px'>" . $row["doctor_name"] . "</td>";
+            echo "<td style='width:150px'>" . $row["actor_name"] . "</td>";
+            echo "<td style='width:150px'>" . $row["years_active"] . "</td>";
+            echo "<td>" . $row["doctor_desc"] . "</td>";
             echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='edit-qna.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-qna.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }
     }
 
-    public function deleteQnA($id) {
+    public function deleteDoctor($id) {
         if (!is_numeric($id)) {
             echo 'ID otázky musí byť číslo.';
         }
-        $sql = "DELETE FROM qna WHERE id = :id";
+        $sql = "DELETE FROM doctors WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
         $statement->execute();
