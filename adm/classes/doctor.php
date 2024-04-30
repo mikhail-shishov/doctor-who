@@ -75,7 +75,7 @@ class doctor extends Database
             echo "<td style='width:150px'>" . $row["actor_name"] . "</td>";
             echo "<td style='width:150px'>" . $row["years_active"] . "</td>";
             echo "<td>" . $row["doctor_desc"] . "</td>";
-            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='edit-qna.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-qna.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
+            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='edit-doctor.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-doctor.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }
     }
