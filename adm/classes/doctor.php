@@ -54,7 +54,7 @@ class doctor extends Database
             echo "<tr>";
             echo "<th>" . $row["doctor_name"] . "</th>";
             echo "<td>" . $row["actor_name"] . "</td>";
-            echo "<td>" . $row["years_active"] . "</td>";
+            echo "<td style='width:120px;'>" . $row["years_active"] . "</td>";
             echo "<td>" . $row["doctor_desc"] . "</td>";
             echo "</tr>";
         }
@@ -62,7 +62,7 @@ class doctor extends Database
 
     public function getDoctor()
     {
-        $sql = "SELECT * FROM doctors";
+        $sql = "SELECT * FROM doctors WHERE featured = 1";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);

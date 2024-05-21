@@ -1,7 +1,7 @@
 <?php include_once 'components/header.php' ?>
 <div class="container">
     <h1 class="mb-4">Doktory</h1>
-    <a href="adm/doctor-add.php" class="btn btn-primary">Prídať nového</a>
+    <a href="doctor-add.php" class="btn btn-primary">Prídať nového</a>
     <table class="table mt-4">
         <thead>
             <tr>
