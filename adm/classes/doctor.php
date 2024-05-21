@@ -13,17 +13,18 @@ class doctor extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function updateDoctor($id, $doctor_name, $actor_name, $years_active, $doctor_desc, $featured)
+    public function updateDoctor($id, $doctor_name, $actor_name, $actor_photo, $years_active, $doctor_desc, $featured)
     {
         if (!is_numeric($id)) {
             echo 'ID doktora musí byť číslo.';
             exit;
         }
-        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, years_active = :years_active, doctor_desc = :doctor_desc, featured = :featured WHERE id = :id";
+        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, actor_photo = :actor_photo, years_active = :years_active, doctor_desc = :doctor_desc, featured = :featured WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
         $statement->bindParam(':doctor_name', $doctor_name);
         $statement->bindParam(':actor_name', $actor_name);
+        $statement->bindParam(':actor_photo', $actor_photo);
         $statement->bindParam(':years_active', $years_active);
         $statement->bindParam(':doctor_desc', $doctor_desc);
         $statement->bindParam(':featured', $featured);
@@ -90,7 +91,7 @@ class doctor extends Database
             echo "<td style='width:150px'>" . $row["actor_name"] . "</td>";
             echo "<td style='width:150px'>" . $row["years_active"] . "</td>";
             echo "<td>" . $row["doctor_desc"] . "</td>";
-            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='edit-doctor.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-doctor.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
+            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='doctor-edit.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-doctor.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }
     }
