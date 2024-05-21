@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $years_active = $_POST['years_active'] ?? null;
     $doctor_desc = $_POST['doctor_desc'] ?? null;
     $featured = isset($_POST['featured']) ? 1 : 0;
-
+    $actor_photo = null;
     if (isset($_FILES['actor_photo']) && $_FILES['actor_photo']['error'] == 0) {
         $actor_photo = file_get_contents($_FILES['actor_photo']['tmp_name']);
     }
