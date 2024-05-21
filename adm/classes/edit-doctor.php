@@ -13,27 +13,26 @@ class doctor extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function updateDoctor($id, $doctor_name, $actor_name, $years_active, $doctor_desc, $featured)
+    public function updateDoctor($id, $doctor_name, $actor_name, $years_active, $doctor_desc)
     {
         if (!is_numeric($id)) {
-            echo 'ID doktora musí byť číslo.';
+            echo 'ID otázky musí byť číslo.';
             exit;
         }
-        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, years_active = :years_active, doctor_desc = :doctor_desc, featured = :featured WHERE id = :id";
+        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, years_active = :years_active, doctor_desc = :doctor_desc WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
         $statement->bindParam(':doctor_name', $doctor_name);
         $statement->bindParam(':actor_name', $actor_name);
         $statement->bindParam(':years_active', $years_active);
         $statement->bindParam(':doctor_desc', $doctor_desc);
-        $statement->bindParam(':featured', $featured);
         $statement->execute();
     }
 
     public function getDoctorById($id)
     {
         if (!is_numeric($id)) {
-            echo "ID doktora musí byť číslo.";
+            echo "ID otázky musí byť číslo.";
             exit;
         }
         $sql = "SELECT * FROM doctors WHERE id = :id";
@@ -44,22 +43,6 @@ class doctor extends Database
         return $row;
     }
 
-    public function getDoctorTable()
-    {
-        $sql = "SELECT * FROM doctors";
-        $statement = $this->connection->prepare($sql);
-        $statement->execute();
-        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($data as $row) {
-            echo "<tr>";
-            echo "<th>" . $row["doctor_name"] . "</th>";
-            echo "<td>" . $row["actor_name"] . "</td>";
-            echo "<td>" . $row["years_active"] . "</td>";
-            echo "<td>" . $row["doctor_desc"] . "</td>";
-            echo "</tr>";
-        }
-    }
-
     public function getDoctor()
     {
         $sql = "SELECT * FROM doctors";
@@ -67,10 +50,12 @@ class doctor extends Database
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $row) {
-            echo "<div class='splide__slide'>";
-            echo "<p class='doctor-name'>Herec " . $row["actor_name"] . " ako " . $row["doctor_name"] . "</p>";
-            echo "<div class='enemy-pic'>";
-            echo "<img src='data:image/jpg;base64," . base64_encode($row["actor_photo"]) . "' alt='" . $row["actor_name"] . "' />";
+            echo "<div class='accordion-block'>";
+            echo "<button class='accordion-heading'><span class='accordion-heading-name'>" . $row["otazka"] . "</span></button>";
+            echo "<div class='accordion-text'>" . $row["odpoved"] . "</div>";
+            echo "<div class='link-edit-wrap'>";
+            echo "<a class='link-edit' href='edit-qna.php?id=" . $row["id"] . "'>Editovať</a>";
+            echo "<a class='link-delete' href='delete-qna.php?id=" . $row["id"] . "'>Vymazať</a>";
             echo "</div>";
             echo "</div>";
         }

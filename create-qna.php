@@ -12,15 +12,16 @@ $noindex = 1;
 <div class="container">
     <form action="adm/classes/create-qna.php" class="form" method="post">
         <label class="form-label">
-            <span>Nová otázka</span>
-            <input type="text" name="otazka" id="otazka" required>
+            <span class="text-input-name">Nová otázka</span>
+            <input type="text" name="otazka" id="otazka" class="text-input" required>
         </label>
         <label class="form-label">
-            <span>Nová odpoveď</span>
-            <textarea cols="30" rows="10" name="odpoved" id="odpoved" required></textarea>
+            <span class="text-input-name">Nová odpoveď</span>
+            <textarea cols="30" rows="10" name="odpoved" id="odpoved" class="text-input" required></textarea>
         </label>
         <input type="submit" class="btn" value="Vytvoriť">
     </form>
+    <br>
 </div>
 
 <?php include_once 'components/footer.php' ?>

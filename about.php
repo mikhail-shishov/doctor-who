@@ -28,96 +28,29 @@ $splide = 1;
             <th>Poradie Doktorov</th>
             <th>Herec</th>
             <th>Obdobie</th>
+            <th>Kratký opis</th>
           </tr>
-          <tr>
-            <th>Prvý Doktor</th>
-            <td>William Hartnell</td>
-            <td>1963 – 1966</td>
-          </tr>
-          <tr>
-            <th>Druhý Doktor</th>
-            <td>Patrick Troughton</td>
-            <td>1966 – 1969</td>
-          </tr>
-          <tr>
-            <th>Tretí Doktor</th>
-            <td>Jon Pertwee</td>
-            <td>1970 – 1974</td>
-          </tr>
-          <tr>
-            <th>Štvrtý Doktor</th>
-            <td>Tom Baker</td>
-            <td>1974 – 1981</td>
-          </tr>
-          <tr>
-            <th>Piaty Doktor</th>
-            <td>Peter Davison</td>
-            <td>1981 – 1984</td>
-          </tr>
-          <tr>
-            <th>Šiesty Doktor</th>
-            <td>Colin Baker</td>
-            <td>1984 – 1986</td>
-          </tr>
-          <tr>
-            <th>Siedmy Doktor</th>
-            <td>Sylvester McCoy</td>
-            <td>1987 – 1989</td>
-          </tr>
-          <tr>
-            <th>Ôsmy Doktor</th>
-            <td>Paul McGann</td>
-            <td>1996</td>
-          </tr>
-          <tr>
-            <th>Deviaty Doktor</th>
-            <td>Christopher Eccleston</td>
-            <td>2005</td>
-          </tr>
-          <tr>
-            <th>Desiaty Doktor</th>
-            <td>David Tennant</td>
-            <td>2005 – 2010</td>
-          </tr>
-          <tr>
-            <th>Jedenásty Doktor</th>
-            <td>Matt Smith</td>
-            <td>2010 – 2013</td>
-          </tr>
-          <tr>
-            <th>Dvanásty Doktor</th>
-            <td>Peter Capaldi</td>
-            <td>2013 – 2017</td>
-          </tr>
-          <tr>
-            <th>Trinásty Doktor</th>
-            <td>Jodie Whittaker</td>
-            <td>2017 – 2022</td>
-          </tr>
-          <tr>
-            <th>Štrnásty Doktor</th>
-            <td>David Tennant (áno, ešte raz)</td>
-            <td>2023</td>
-          </tr>
-          <tr>
-            <th>Pätnásty Doktor</th>
-            <td>Ncuti Gatwa</td>
-            <td>od 2024</td>
-          </tr>
+          <?php require_once 'adm/classes/doctor.php';
+          $doctor = new doctor();
+          $doctor->getDoctorTable();
+          ?>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- kreatívny bod -->
 <section class="doctor-page-sect">
   <div class="container">
     <h2 class="h2">Moje najobľubenejšie Doktory</h2>
     <div class="splide doctor-splide">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">
+          <?php
+          $doctor = new doctor();
+          $doctor->getDoctor();
+          ?>
+          <!-- <li class="splide__slide">
             <p class="doctor-name">Herec Christopher Eccleston ako Doktor</p>
             <div class="enemy-pic">
               <img src="img/doctor/9.jpg" alt="Eccleston" />
@@ -143,10 +76,11 @@ $splide = 1;
             <div class="enemy-pic">
               <img src="img/doctor/12.jpg" alt="Capaldi" />
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </div>
 </section>
+
 <?php include_once 'components/footer.php' ?>
