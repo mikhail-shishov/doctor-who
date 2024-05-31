@@ -16,8 +16,8 @@
         </thead>
         <tbody>
             <?php require_once 'classes/doctor.php';
-            $qna = new Doctor();
-            $qna->getDoctor_adm();
+            $doctor = new Doctor();
+            $doctor->getDoctor_adm();
             ?>
         </tbody>
     </table>

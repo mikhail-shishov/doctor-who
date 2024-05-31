@@ -20,3 +20,8 @@
 .link-edit-wrap .link-delete:before {
     background-image: url(../img/icons/delete.png);
 }
+
+.table iframe {
+    max-width: 250px;
+    max-height: 150px;
+}

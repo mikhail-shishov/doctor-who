@@ -32,7 +32,7 @@
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Meno (poradie) doktora</span>
-            <textarea class="form-control mt-1 mb-2" type="text" name="doctor_desc" id="doctor_desc" required><?php echo htmlspecialchars($doctor_desc);?></textarea>
+            <textarea class="form-control mt-1 mb-2" name="doctor_desc" id="doctor_desc" required><?php echo htmlspecialchars($doctor_desc);?></textarea>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Zobrazovať medzi najlepších/naobľubenejších</span>

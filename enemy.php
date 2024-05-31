@@ -10,8 +10,14 @@ $og_image = 'img/enemy/dalek.jpeg';
     <h1 class="h1">Nepriateľia</h1>
     <p class="text text-big">Doktor má veľa nepriateľov, s ktorými neustále bojuje. Mnohé z nich predstavujú nebezpečenstvo pre ľudí, ale Doktor miluje ľudí a snaží sa ich chrániť. Niektoré z nepriateľov sa menia z epizódy na epizódu, niektoré však zostávajú počas sezón. O týchto chcem povedať viac.</p>
 
-    <!-- kreatívny bod -->
     <div class="tab-group" data-tab-group="enemy">
+      <?php require_once 'adm/classes/enemy.php';
+      $enemy = new enemy();
+      $enemy->getEnemy();
+      ?>
+    </div>
+
+    <!-- <div class="tab-group" data-tab-group="enemy">
       <div class="tab-menu">
         <a href="#Daleks" class="tab-btn is-active" data-tab-select="Daleks">Daleks</a>
         <a href="#Cybermen" class="tab-btn" data-tab-select="Cybermen">Cybermen</a>
@@ -108,7 +114,7 @@ $og_image = 'img/enemy/dalek.jpeg';
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 <?php include_once 'components/footer.php' ?>

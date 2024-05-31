@@ -91,14 +91,14 @@ class doctor extends Database
             echo "<td style='width:150px'>" . $row["actor_name"] . "</td>";
             echo "<td style='width:150px'>" . $row["years_active"] . "</td>";
             echo "<td>" . $row["doctor_desc"] . "</td>";
-            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='doctor-edit.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='delete-doctor.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
+            echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='doctor-edit.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='doctor-delete.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }
     }
 
     public function deleteDoctor($id) {
         if (!is_numeric($id)) {
-            echo 'ID otázky musí byť číslo.';
+            echo 'ID musí byť číslo.';
         }
         $sql = "DELETE FROM doctors WHERE id = :id";
         $statement = $this->connection->prepare($sql);

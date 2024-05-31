@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const tabsContent = tab.querySelectorAll('[data-tab]');
     const active = 'is-active';
 
+    tabsMenu[0]?.classList.add(active);
+    tabsContent[0]?.classList.add(active);
+
     tabsMenu.forEach((tab) => {
       tab.addEventListener('click', (e) => {
         e.preventDefault();
