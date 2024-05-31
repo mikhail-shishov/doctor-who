@@ -1,3 +1,7 @@
+<?php
+$page_title = 'Pridavanie nepriateľa';
+?>
+
 <?php include_once 'components/header.php' ?>
 <?php require_once 'classes/enemy.php';
 $enemy = new enemy();

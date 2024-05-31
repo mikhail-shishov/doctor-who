@@ -1,3 +1,7 @@
+<?php
+$page_title = 'Nepriatelia';
+?>
+
 <?php include_once 'components/header.php' ?>
 <div class="container">
     <h1 class="mb-4">Nepriatelia</h1>

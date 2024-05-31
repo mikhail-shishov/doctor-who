@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
     <meta charset="UTF-8">
@@ -23,9 +23,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/doctor-who/adm/publication-list.php">Príspevky</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/doctor-who/adm/doctor-list.php">Zoznam Doktorov</a>
                     </li>

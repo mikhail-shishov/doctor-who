@@ -1,11 +1,11 @@
 <?php
-$page_title = 'Zoznam otázok a odpovede';
+$page_title = 'Zoznam použivateľov';
 ?>
 
 <?php include_once 'components/header.php' ?>
 <div class="container">
-    <h1 class="mb-4">FAQ</h1>
-    <a href="qna-add.php" class="btn btn-primary">Prídať novú otázku</a>
+    <h1 class="mb-4">Zoznam použivateľov</h1>
+    
     <table class="table mt-4">
         <thead>
             <tr>

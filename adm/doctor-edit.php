@@ -1,3 +1,7 @@
+<?php
+$page_title = 'Upravovanie Doktora';
+?>
+
 <?php include_once 'components/header.php' ?>
 <?php require_once 'classes/doctor.php';
     $doctor = new doctor();

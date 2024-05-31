@@ -1,5 +1,4 @@
-<?php
-require_once('classes/contact.php');
+<?php require_once('classes/contact.php');
 
 use contact;
 

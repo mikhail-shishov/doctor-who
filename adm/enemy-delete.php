@@ -1,6 +1,5 @@
 <?php
-$page_title = 'Vymazanie';
-$noindex = 1;
+$page_title = 'Vymazanie nepriateľa';
 ?>
 
 <?php include_once 'components/header.php' ?>
