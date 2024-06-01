@@ -17,7 +17,7 @@ $page_title = 'Zoznam použivateľov';
         <tbody>
             <?php require_once 'classes/qna.php';
             $qna = new QnA();
-            $qna->getQnA_adm();
+            $qna->getQnAAdm();
             ?>
         </tbody>
     </table>

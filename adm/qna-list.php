@@ -5,7 +5,7 @@ $page_title = 'Zoznam otázok a odpovede';
 <?php include_once 'components/header.php' ?>
 <div class="container">
     <h1 class="mb-4">FAQ</h1>
-    <a href="qna-add.php" class="btn btn-primary">Prídať novú otázku</a>
+    <a href="/doctor-who/create-qna.php" class="btn btn-primary">Prídať novú otázku</a>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -17,7 +17,7 @@ $page_title = 'Zoznam otázok a odpovede';
         <tbody>
             <?php require_once 'classes/qna.php';
             $qna = new QnA();
-            $qna->getQnA_adm();
+            $qna->getQnAAdm();
             ?>
         </tbody>
     </table>

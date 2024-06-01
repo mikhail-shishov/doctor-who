@@ -31,7 +31,7 @@ $splide = 1;
             <th>Kratký opis</th>
           </tr>
           <?php require_once 'adm/classes/doctor.php';
-          $doctor = new doctor();
+          $doctor = new Doctor();
           $doctor->getDoctorTable();
           ?>
         </tbody>
@@ -47,7 +47,6 @@ $splide = 1;
       <div class="splide__track">
         <ul class="splide__list">
           <?php
-          $doctor = new doctor();
           $doctor->getDoctor();
           ?>
           <!-- <li class="splide__slide">

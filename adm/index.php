@@ -21,8 +21,8 @@
             <th>Čas odoslania</th>
         </tr>
         <?php require_once 'classes/contact.php';
-        $contact = new contact();
-        $contact->getData_adm();
+        $contact = new Contact();
+        $contact->getDataAdm();
         ?>
     </table>
 </div>

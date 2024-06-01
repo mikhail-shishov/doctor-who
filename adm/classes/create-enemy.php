@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $title = $_POST['title'] ?? null;
     $summary = $_POST['summary'] ?? null;
-    // $photo = $_POST['photo'] ?? null;
     $video = $_POST['video'] ?? null;
     $quote = $_POST['quote'] ?? null;
 

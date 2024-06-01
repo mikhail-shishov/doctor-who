@@ -1,9 +1,9 @@
 <?php define('__ROOT__', dirname(dirname(__FILE__)));
-error_reporting(E_ALL);
-ini_set("display_errors", "On");
+// error_reporting(E_ALL);
+// ini_set("display_errors", "On");
 require_once(__ROOT__ . '/classes/database.php');
 
-class doctor extends Database
+class Doctor extends Database
 {
     protected $connection;
 
@@ -78,7 +78,7 @@ class doctor extends Database
         }
     }
 
-    public function getDoctor_adm()
+    public function getDoctorAdm()
     {
         $sql = "SELECT * FROM doctors ORDER BY placement ASC";
         $statement = $this->connection->prepare($sql);

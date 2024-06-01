@@ -52,7 +52,11 @@ $lightbox = 1;
     <div class="splide enemy-splide">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">
+          <?php require_once 'adm/classes/enemy.php';
+            $enemy = new Enemy();
+            $enemy->getEnemySlider();
+          ?>
+          <!-- <li class="splide__slide">
             <p class="enemy-name">Daleks</p>
             <div class="enemy-pic">
               <img src="img/enemy/dalek.jpeg" alt="Dalek" />
@@ -87,7 +91,7 @@ $lightbox = 1;
             <div class="enemy-pic">
               <img src="img/enemy/angel.jpeg" alt="Angels" />
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

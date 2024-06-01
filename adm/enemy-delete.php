@@ -5,7 +5,7 @@ $page_title = 'Vymazanie nepriateľa';
 <?php include_once 'components/header.php' ?>
 
 <?php require_once 'classes/enemy.php';
-    $enemy = new enemy();
+    $enemy = new Enemy();
     $id = $_GET['id'];
     $enemy->deleteEnemy($id);
 ?>

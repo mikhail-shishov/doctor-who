@@ -9,7 +9,6 @@ $page_title = 'Nepriatelia';
     <table class="table mt-4">
         <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Foto</th>
                 <th scope="col">Názov</th>
                 <th scope="col">Opis</th>
@@ -19,8 +18,8 @@ $page_title = 'Nepriatelia';
         </thead>
         <tbody>
             <?php require_once 'classes/enemy.php';
-            $enemy = new enemy();
-            $enemy->getEnemy_adm();
+            $enemy = new Enemy();
+            $enemy->getEnemyAdm();
             ?>
         </tbody>
     </table>

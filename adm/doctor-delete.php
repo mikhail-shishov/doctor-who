@@ -5,7 +5,7 @@ $page_title = 'Vymazanie Doktora';
 <?php include_once 'components/header.php' ?>
 
 <?php require_once 'classes/doctor.php';
-    $doctor = new doctor();
+    $doctor = new Doctor();
     $id = $_GET['id'];
     $doctor->deleteDoctor($id);
 ?>

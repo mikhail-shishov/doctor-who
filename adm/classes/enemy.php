@@ -3,7 +3,7 @@
 // ini_set("display_errors", "On");
 require_once(__ROOT__ . '/classes/database.php');
 
-class enemy extends Database
+class Enemy extends Database
 {
     protected $connection;
 
@@ -50,11 +50,13 @@ class enemy extends Database
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+        echo "<div class='tab-group' data-tab-group='enemy'>";
+        echo "<div class='tab-menu'>";
         foreach ($data as $row) {
-            echo "<div class='tab-group' data-tab-group='" . $row["id"] . "'>";
-            echo "<div class='tab-menu'>";
             echo "<a href='#" . $row["title"] . "' class='tab-btn' data-tab-select='" . $row["title"] . "'>" . $row["title"] . "</a>";
-            echo "</div>";
+        }
+        echo "</div>";
+        foreach ($data as $row) {
             echo "<div class='tab' data-tab='" . $row["title"] . "' id='" . $row["title"] . "'>";
             echo "<h2 class='h2'>" . $row["title"] . "</h2>";
             echo "<p class='text'>" . $row["summary"] . "</p>";
@@ -72,11 +74,27 @@ class enemy extends Database
             echo "</div>";
             echo "</div>";
             echo "</div>";
+        }
+        echo "</div>";
+    }
+
+    public function getEnemySlider()
+    {
+        $sql = "SELECT * FROM enemies";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($data as $row) {
+            echo "<div class='splide__slide'>";
+            echo "<p class='enemy-name'>" . $row["title"] . "</p>";
+            echo "<div class='enemy-pic'>";
+            echo "<img src='data:image/jpg;base64," . base64_encode($row["photo"]) . "' alt='" . $row["title"] . "' />";
+            echo "</div>";
             echo "</div>";
         }
     }
 
-    public function getEnemy_adm()
+    public function getEnemyAdm()
     {
         $sql = "SELECT * FROM enemies";
         $statement = $this->connection->prepare($sql);
@@ -84,7 +102,6 @@ class enemy extends Database
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<th>" . $row["id"] . "</th>";
             echo "<td><img width='200' src='data:image/jpg;base64," . base64_encode($row["photo"]) . "'/></td>";
             echo "<td style='width:150px'>" . $row["title"] . "</td>";
             echo "<td style='width:250px;font-size:14px'>" . $row["summary"] . "</td>";
@@ -95,7 +112,8 @@ class enemy extends Database
         }
     }
 
-    public function deleteEnemy($id) {
+    public function deleteEnemy($id)
+    {
         if (!is_numeric($id)) {
             echo 'ID musí byť číslo.';
         }

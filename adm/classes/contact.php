@@ -4,7 +4,7 @@
 // ini_set("display_errors", "On");
 require_once(__ROOT__ . '/classes/database.php');
 
-class contact extends Database
+class Contact extends Database
 {
     protected $connection;
 
@@ -28,7 +28,7 @@ class contact extends Database
         }
     }
 
-    public function getData_adm()
+    public function getDataAdm()
     {
         $sql = "SELECT * FROM contact_data ORDER BY id DESC";
         $statement = $this->connection->prepare($sql);

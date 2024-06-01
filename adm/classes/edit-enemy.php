@@ -5,7 +5,7 @@ require_once(__ROOT__ . '/classes/enemy.php');
 session_start();
 
 $id = $_GET["id"];
-$enemy = new enemy();
+$enemy = new Enemy();
 
 $row = $enemy->getEnemyById(intval($id));
 

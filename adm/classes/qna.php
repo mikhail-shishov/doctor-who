@@ -59,7 +59,7 @@ class QnA extends Database
         }
     }
 
-    public function getQnA_adm()
+    public function getQnAAdm()
     {
         $sql = "SELECT * FROM qna";
         $statement = $this->connection->prepare($sql);

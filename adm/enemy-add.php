@@ -4,7 +4,7 @@ $page_title = 'Pridavanie nepriateľa';
 
 <?php include_once 'components/header.php' ?>
 <?php require_once 'classes/enemy.php';
-$enemy = new enemy();
+$enemy = new Enemy();
 ?>
 
 <div class="container">

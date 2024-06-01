@@ -21,7 +21,7 @@ $page_title = 'Zoznam Doktorov';
         <tbody>
             <?php require_once 'classes/doctor.php';
             $doctor = new Doctor();
-            $doctor->getDoctor_adm();
+            $doctor->getDoctorAdm();
             ?>
         </tbody>
     </table>

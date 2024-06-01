@@ -10,7 +10,7 @@ if (empty($meno) || empty($email) || empty($sprava)) {
     die('Chyba: Všetky polia sú povinné!');
 }
 // Uloženie správy do databázy
-$kontakt = new contact();
+$kontakt = new Contact();
 $ulozene = $kontakt->ulozitSpravu($meno, $email, $sprava);
 if ($ulozene) {
     header('Location: http://localhost/doctor-who/thank-you.php');

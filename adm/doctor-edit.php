@@ -4,7 +4,7 @@ $page_title = 'Upravovanie Doktora';
 
 <?php include_once 'components/header.php' ?>
 <?php require_once 'classes/doctor.php';
-    $doctor = new doctor();
+    $doctor = new Doctor();
     $id = $_GET['id'];
     $row = $doctor->getDoctorById($id);
     $doctor_name = $row['doctor_name'];

@@ -5,7 +5,7 @@ require_once(__ROOT__ . '/classes/doctor.php');
 session_start();
 
 $id = $_GET["id"];
-$doctor = new doctor();
+$doctor = new Doctor();
 
 $row = $doctor->getDoctorById(intval($id));
 
