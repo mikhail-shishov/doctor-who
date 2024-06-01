@@ -11,22 +11,22 @@ class Users extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function register($login, $email, $password)
+    public function register($username, $email, $password)
     {
         try {
             $hashed_pw = password_hash($password, PASSWORD_BCRYPT);
-            $sql = "SELECT * FROM users WHERE (login = ? OR email = ?) LIMIT 1;";
+            $sql = "SELECT * FROM users WHERE (username = ? OR email = ?) LIMIT 1;";
             $statement = $this->connection->prepare($sql);
-            $statement->bindParam(1, $login);
+            $statement->bindParam(1, $username);
             $statement->bindParam(2, $email);
             $statement->execute();
             $existingUser = $statement->fetch();
             if ($existingUser) {
                 throw new Exception("Použivateľ už existuje.");
             }
-            $sql = "INSERT INTO users (login, email, password, role) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
             $statement = $this->connection->prepare($sql);
-            $statement->bindParam(1, $login);
+            $statement->bindParam(1, $username);
             $statement->bindParam(2, $email);
             $statement->bindParam(3, $hashed_pw);
             $statement->bindParam(4, $this->role);
@@ -57,7 +57,7 @@ class Users extends Database
         }
         session_start();
         $_SESSION["user_id"] = $user["ID"];
-        $_SESSION["login"] = $user["login"];
+        $_SESSION["username"] = $user["username"];
         $_SESSION["role"] = $user["role"];
     }
 
@@ -84,5 +84,30 @@ class Users extends Database
             // echo "nenašiel sa session";
             return false;
         }
+    }
+
+    public function getUsersAdm()
+    {
+        $sql = "SELECT * FROM users";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($data as $row) {
+            echo "<tr>";
+            echo "<td style='width:150px'>" . $row["username"] . "</td>";
+            echo "<td style='width:150px'>" . $row["email"] . "</td>";
+            echo "<td>" . "<a class='link-delete' style='margin-top:0;margin-left:200px' href='user-delete.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
+            echo "</tr>";
+        }
+    }
+
+    public function deleteUser($id) {
+        if (!is_numeric($id)) {
+            echo 'ID musí byť číslo.';
+        }
+        $sql = "DELETE FROM users WHERE id = :id";
+        $statement = $this->connection->prepare($sql);
+        $statement->bindParam(':id', $id);
+        $statement->execute();
     }
 }

@@ -29,7 +29,11 @@ $lightbox = 1;
       </div>
       <div class="col-6">
         <div class="about-doctor-grid">
-          <a href="img/doctor/9.jpg" class="lightbox">
+          <?php require_once 'adm/classes/doctor.php';
+            $doctor = new Doctor();
+            $doctor->getDoctorLatest();
+          ?>
+          <!-- <a href="img/doctor/9.jpg" class="lightbox">
             <img src="img/doctor/9.jpg" loading="lazy" alt="" title="9th Doctor, played by Christopher Eccleston" />
           </a>
           <a href="img/doctor/10.jpg" class="lightbox">
@@ -40,7 +44,7 @@ $lightbox = 1;
           </a>
           <a href="img/doctor/12.jpg" class="lightbox">
             <img src="img/doctor/12.jpg" loading="lazy" alt="" title="12th Doctor, played by Peter Capaldi" />
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -56,42 +60,6 @@ $lightbox = 1;
             $enemy = new Enemy();
             $enemy->getEnemySlider();
           ?>
-          <!-- <li class="splide__slide">
-            <p class="enemy-name">Daleks</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/dalek.jpeg" alt="Dalek" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <p class="enemy-name">Cybermen</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/cybermen.jpeg" alt="Cybermen" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <p class="enemy-name">Sontaran</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/sontaran.jpg" alt="Sontaran" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <p class="enemy-name">The Silence</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/silence.jpg" alt="The Silence" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <p class="enemy-name">Cassandra</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/cassandra.jpg" alt="Cassandra" />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <p class="enemy-name">Angels</p>
-            <div class="enemy-pic">
-              <img src="img/enemy/angel.jpeg" alt="Angels" />
-            </div>
-          </li> -->
         </ul>
       </div>
     </div>

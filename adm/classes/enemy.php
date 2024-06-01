@@ -64,14 +64,18 @@ class Enemy extends Database
             echo "<img src='data:image/jpg;base64," . base64_encode($row["photo"]) . "' alt='" . $row["title"] . "' />";
             echo "</div>";
             echo "<div class='row'>";
-            echo "<div class='col-6'>";
-            echo "<h3 class='h3'>Príklad</h3>";
-            echo $row["video"];
+            if (!empty($row["video"])) {
+                echo "<div class='col-6'>";
+                echo "<h3 class='h3'>Príklad</h3>";
+                echo $row["video"];
+            }
             echo "</div>";
-            echo "<div class='col-6'>";
-            echo "<h3 class='h3'>Citát</h3>";
-            echo "<cite class='enemy-quote'>" . $row["quote"] . "</cite>";
-            echo "</div>";
+            if (!empty($row["quote"])) {
+                echo "<div class='col-6'>";
+                echo "<h3 class='h3'>Citát</h3>";
+                echo "<cite class='enemy-quote'>" . $row["quote"] . "</cite>";
+                echo "</div>";
+            }
             echo "</div>";
             echo "</div>";
         }

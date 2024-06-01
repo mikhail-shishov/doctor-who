@@ -9,15 +9,15 @@ $page_title = 'Zoznam použivateľov';
     <table class="table mt-4">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Otázka</th>
-                <th scope="col">Opis</th>
+                <th scope="col">Username</th>
+                <th scope="col">E-mail</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <?php require_once 'classes/qna.php';
-            $qna = new QnA();
-            $qna->getQnAAdm();
+            <?php require_once 'classes/users.php';
+            $users = new Users();
+            $users->getUsersAdm();
             ?>
         </tbody>
     </table>

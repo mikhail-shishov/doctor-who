@@ -78,6 +78,19 @@ class Doctor extends Database
         }
     }
 
+    public function getDoctorLatest()
+    {
+        $sql = "SELECT * FROM doctors ORDER BY placement DESC LIMIT 4";
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($data as $row) {
+            echo "<div class='lightbox'>";
+            echo "<img src='data:image/jpg;base64," . base64_encode($row["actor_photo"]) . "' loading='lazy' alt='" . $row["actor_name"] . "' title='" . $row["actor_name"] . " ako " . $row["doctor_name"] . "' />";
+            echo "</div>";
+        }
+    }
+
     public function getDoctorAdm()
     {
         $sql = "SELECT * FROM doctors ORDER BY placement ASC";

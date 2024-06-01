@@ -85,14 +85,18 @@ $page = basename($_SERVER['PHP_SELF']);
           <a href="qna.php" class="<?php if ($page == 'qna.php') {
                                       echo 'is-active';
                                     } ?>">FAQ</a>
-          <!--a href="feedback.php" class="<?php if ($page == 'feedback.php') {
-                                              echo 'is-active';
-                                            } ?>">Feedback</a-->
           <a href="contact.php" class="<?php if ($page == 'contact.php') {
                                           echo 'is-active';
                                         } ?>">Kontakt</a>
-          <?php if (isset($_SESSION['login'])) {
-            echo '<a href="/doctor-who/adm/index.php">Prihlasený: ' . $_SESSION['login'] . $_SESSION['role'] . '</a>';
+          <?php
+          session_start();
+          if (isset($_SESSION['username'])) {
+            if ($_SESSION['role'] == 'admin') {
+              echo '<a href="/doctor-who/adm/index.php">Prihlasený: ' . $_SESSION['username'] . ' (Admin)</a> ';
+              echo '<a href="/doctor-who/adm/classes/logout.php">Odhlásiť</a>';
+            } else {
+              echo '<a href="/doctor-who/adm/classes/logout.php">Prihlasený: ' . $_SESSION['username'] . ' (' . $_SESSION['role'] . ')</a>';
+            }
           } else {
             echo '<a href="/doctor-who/login.php">Prihlasiť sa</a>';
           } ?>

@@ -7,7 +7,10 @@
       $qna->getQnA();
       ?>
     </div>
-    <br>
-    <a href="create-qna.php" class="btn">Nová otázka</a>
+
+    <?php if ($_SESSION['role'] == 'admin') {
+      echo "<br>";
+      echo "<a href='create-qna.php' class='btn'>Nová otázka</a>";
+    } ?>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <?php include_once 'components/header.php' ?>
 <div class="container">
-    <h1 class="mb-4">Ahoj, username!</h1>
+    <h1 class="mb-4">Ahoj, <span style="color: blue"><?php session_start();echo $_SESSION['username'];?></span>!</h1>
     <h2 class="mb-3">Obsah stranky</h2>
     <ul class="list-group mb-5">
         <li class="list-group-item"><a href="doctor-list.php">Doktory</a></li>

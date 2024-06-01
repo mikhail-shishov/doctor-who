@@ -232,7 +232,7 @@ iframe {
   gap: 20px;
 }
 
-.about-doctor-grid a {
+.about-doctor-grid a, .about-doctor-grid div {
   height: 200px;
   overflow: hidden;
   position: relative;
@@ -674,7 +674,7 @@ iframe {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about-doctor-grid a {
+  .about-doctor-grid a, .about-doctor-grid div {
     height: 175px;
   }
 

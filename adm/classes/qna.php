@@ -51,10 +51,12 @@ class QnA extends Database
             echo "<div class='accordion-block'>";
             echo "<button class='accordion-heading'><span class='accordion-heading-name'>" . $row["otazka"] . "</span></button>";
             echo "<div class='accordion-text'>" . $row["odpoved"] . "</div>";
-            echo "<div class='link-edit-wrap'>";
-            echo "<a class='link-edit' href='edit-qna.php?id=" . $row["id"] . "'>Editovať</a>";
-            echo "<a class='link-delete' href='delete-qna.php?id=" . $row["id"] . "'>Vymazať</a>";
-            echo "</div>";
+            if ($_SESSION['role'] == 'admin') {
+                echo "<div class='link-edit-wrap'>";
+                echo "<a class='link-edit' href='edit-qna.php?id=" . $row["id"] . "'>Editovať</a>";
+                echo "<a class='link-delete' href='delete-qna.php?id=" . $row["id"] . "'>Vymazať</a>";
+                echo "</div>";
+            }
             echo "</div>";
         }
     }

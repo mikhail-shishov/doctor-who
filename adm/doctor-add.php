@@ -22,7 +22,7 @@ $doctor = new Doctor();
             <input class="form-control" type="file" name="actor_photo" id="actor_photo" required>
         </label>
         <label class="form-control mb-3">
-            <span class="form-label">Obdobie, kedy bol hlavnou postavou, v tvare yyyy-yyyy *</span>
+            <span class="form-label">Obdobie, kedy bol hlavnou postavou, v tvaru yyyy-yyyy *</span>
             <input class="form-control mt-1 mb-2" type="text" name="years_active" id="years_active" required>
         </label>
         <label class="form-control mb-3">
