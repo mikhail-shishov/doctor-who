@@ -1,4 +1,4 @@
-<?php 
+<?php
 define('__ROOT__', dirname(dirname(__FILE__)));
 require_once(__ROOT__ . '/classes/database.php');
 
@@ -10,19 +10,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $actor_name = $_POST['actor_name'] ?? null;
     $actor_photo = $_POST['actor_photo'] ?? null;
     $years_active = $_POST['years_active'] ?? null;
-    $doctor_desc = $_POST['doctor_desc'] ?? null;
+    $summary = $_POST['summary'] ?? null;
+    $placement = $_POST['placement'] ?? null;
     $featured = isset($_POST['featured']) ? 1 : 0;
-    
+
     $actor_photo = null;
     if (isset($_FILES['actor_photo']) && $_FILES['actor_photo']['error'] == 0) {
         $actor_photo = file_get_contents($_FILES['actor_photo']['tmp_name']);
     }
 
-    if (!empty($doctor_name) && !empty($actor_name) && !empty($years_active) && !empty($doctor_desc) && $actor_photo !== null) {
+    if (!empty($doctor_name) && !empty($actor_name) && !empty($years_active) && !empty($summary) && $actor_photo !== null) {
         try {
-            $sql = "INSERT INTO doctors (doctor_name, actor_name, actor_photo, years_active, doctor_desc, featured) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO doctors (doctor_name, actor_name, actor_photo, years_active, summary, placement, featured) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = $connection->prepare($sql);
-            $stmt->execute([$doctor_name, $actor_name, $actor_photo, $years_active, $doctor_desc, $featured]);
+            $stmt->execute([$doctor_name, $actor_name, $actor_photo, $years_active, $summary, $placement, $featured]);
 
             echo "Obsah bol úspešne uložený.";
             header("Location: ../../adm/doctor-list.php");
@@ -39,4 +40,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "</pre>";
     }
 }
-?>

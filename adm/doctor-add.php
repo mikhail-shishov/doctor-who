@@ -26,8 +26,12 @@ $doctor = new doctor();
             <input class="form-control mt-1 mb-2" type="text" name="years_active" id="years_active" required>
         </label>
         <label class="form-control mb-3">
-            <span class="form-label">Meno (poradie) doktora *</span>
-            <textarea class="form-control mt-1 mb-2" name="doctor_desc" id="doctor_desc" required></textarea>
+            <span class="form-label">Opis doktora *</span>
+            <textarea class="form-control mt-1 mb-2" name="summary" id="summary" required></textarea>
+        </label>
+        <label class="form-control mb-3">
+            <span class="form-label">Poradie v tvaru čísla, pre zoznamy a tabuľky *</span>
+            <input class="form-control mt-1 mb-2" type="number" name="placement" id="placement" required>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Zobrazovať medzi najlepších/naobľubenejších</span>

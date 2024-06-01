@@ -11,7 +11,7 @@ $page_title = 'Zoznam Doktorov';
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Fotka</th>
-                <th scope="col">Poradie Doktora</th>
+                <th scope="col">Meno (poradie) doktora</th>
                 <th scope="col">Meno herca</th>
                 <th scope="col">Roky</th>
                 <th scope="col">Opis</th>

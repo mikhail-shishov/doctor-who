@@ -1,6 +1,6 @@
 <?php define('__ROOT__', dirname(dirname(__FILE__)));
-// error_reporting(E_ALL);
-// ini_set("display_errors", "On");
+error_reporting(E_ALL);
+ini_set("display_errors", "On");
 require_once(__ROOT__ . '/classes/database.php');
 
 class doctor extends Database
@@ -13,20 +13,21 @@ class doctor extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function updateDoctor($id, $doctor_name, $actor_name, $actor_photo, $years_active, $doctor_desc, $featured)
+    public function updateDoctor($id, $doctor_name, $actor_name, $actor_photo, $years_active, $summary, $placement, $featured)
     {
         if (!is_numeric($id)) {
             echo 'ID doktora musí byť číslo.';
             exit;
         }
-        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, actor_photo = :actor_photo, years_active = :years_active, doctor_desc = :doctor_desc, featured = :featured WHERE id = :id";
+        $sql = "UPDATE doctors SET doctor_name = :doctor_name, actor_name = :actor_name, actor_photo = :actor_photo, years_active = :years_active, summary = :summary, placement = :placement, featured = :featured  WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
         $statement->bindParam(':doctor_name', $doctor_name);
         $statement->bindParam(':actor_name', $actor_name);
         $statement->bindParam(':actor_photo', $actor_photo);
         $statement->bindParam(':years_active', $years_active);
-        $statement->bindParam(':doctor_desc', $doctor_desc);
+        $statement->bindParam(':summary', $summary);
+        $statement->bindParam(':placement', $placement);
         $statement->bindParam(':featured', $featured);
         $statement->execute();
     }
@@ -47,7 +48,7 @@ class doctor extends Database
 
     public function getDoctorTable()
     {
-        $sql = "SELECT * FROM doctors";
+        $sql = "SELECT * FROM doctors ORDER BY placement ASC";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -56,7 +57,7 @@ class doctor extends Database
             echo "<th>" . $row["doctor_name"] . "</th>";
             echo "<td>" . $row["actor_name"] . "</td>";
             echo "<td style='width:120px;'>" . $row["years_active"] . "</td>";
-            echo "<td>" . $row["doctor_desc"] . "</td>";
+            echo "<td>" . $row["summary"] . "</td>";
             echo "</tr>";
         }
     }
@@ -79,18 +80,18 @@ class doctor extends Database
 
     public function getDoctor_adm()
     {
-        $sql = "SELECT * FROM doctors";
+        $sql = "SELECT * FROM doctors ORDER BY placement ASC";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<th>" . $row["id"] . "</th>";
+            echo "<th>" . $row["placement"] . "</th>";
             echo "<td><img width='250' src='data:image/jpg;base64," . base64_encode($row["actor_photo"]) . "'/></td>";
             echo "<td style='width:150px'>" . $row["doctor_name"] . "</td>";
             echo "<td style='width:150px'>" . $row["actor_name"] . "</td>";
             echo "<td style='width:150px'>" . $row["years_active"] . "</td>";
-            echo "<td>" . $row["doctor_desc"] . "</td>";
+            echo "<td style='font-size:14px'>" . $row["summary"] . "</td>";
             echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='doctor-edit.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='doctor-delete.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }

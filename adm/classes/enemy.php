@@ -13,20 +13,20 @@ class enemy extends Database
         $this->connection = $this->getConnection();
     }
 
-    public function updateEnemy($id, $enemy_name, $enemy_desc, $enemy_photo, $enemy_video, $enemy_quote)
+    public function updateEnemy($id, $title, $summary, $photo, $video, $quote)
     {
         if (!is_numeric($id)) {
             echo 'ID musí byť číslo.';
             exit;
         }
-        $sql = "UPDATE enemies SET enemy_name = :enemy_name, enemy_desc = :enemy_desc, enemy_photo = :enemy_photo, enemy_video = :enemy_video, enemy_quote = :enemy_quote WHERE id = :id";
+        $sql = "UPDATE enemies SET title = :title, summary = :summary, photo = :photo, video = :video, quote = :quote WHERE id = :id";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':id', $id);
-        $statement->bindParam(':enemy_name', $enemy_name);
-        $statement->bindParam(':enemy_desc', $enemy_desc);
-        $statement->bindParam(':enemy_photo', $enemy_photo);
-        $statement->bindParam(':enemy_video', $enemy_video);
-        $statement->bindParam(':enemy_quote', $enemy_quote);
+        $statement->bindParam(':title', $title);
+        $statement->bindParam(':summary', $summary);
+        $statement->bindParam(':photo', $photo);
+        $statement->bindParam(':video', $video);
+        $statement->bindParam(':quote', $quote);
         $statement->execute();
     }
 
@@ -53,22 +53,22 @@ class enemy extends Database
         foreach ($data as $row) {
             echo "<div class='tab-group' data-tab-group='" . $row["id"] . "'>";
             echo "<div class='tab-menu'>";
-            echo "<a href='#" . $row["enemy_name"] . "' class='tab-btn' data-tab-select='" . $row["enemy_name"] . "'>" . $row["enemy_name"] . "</a>";
+            echo "<a href='#" . $row["title"] . "' class='tab-btn' data-tab-select='" . $row["title"] . "'>" . $row["title"] . "</a>";
             echo "</div>";
-            echo "<div class='tab' data-tab='" . $row["enemy_name"] . "' id='" . $row["enemy_name"] . "'>";
-            echo "<h2 class='h2'>" . $row["enemy_name"] . "</h2>";
-            echo "<p class='text'>" . $row["enemy_desc"] . "</p>";
+            echo "<div class='tab' data-tab='" . $row["title"] . "' id='" . $row["title"] . "'>";
+            echo "<h2 class='h2'>" . $row["title"] . "</h2>";
+            echo "<p class='text'>" . $row["summary"] . "</p>";
             echo "<div class='enemy-tab-img'>";
-            echo "<img src='data:image/jpg;base64," . base64_encode($row["enemy_photo"]) . "' alt='" . $row["enemy_name"] . "' />";
+            echo "<img src='data:image/jpg;base64," . base64_encode($row["photo"]) . "' alt='" . $row["title"] . "' />";
             echo "</div>";
             echo "<div class='row'>";
             echo "<div class='col-6'>";
             echo "<h3 class='h3'>Príklad</h3>";
-            echo $row["enemy_video"];
+            echo $row["video"];
             echo "</div>";
             echo "<div class='col-6'>";
             echo "<h3 class='h3'>Citát</h3>";
-            echo "<cite class='enemy-quote'>" . $row["enemy_quote"] . "</cite>";
+            echo "<cite class='enemy-quote'>" . $row["quote"] . "</cite>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
@@ -85,11 +85,11 @@ class enemy extends Database
         foreach ($data as $row) {
             echo "<tr>";
             echo "<th>" . $row["id"] . "</th>";
-            echo "<td><img width='200' src='data:image/jpg;base64," . base64_encode($row["enemy_photo"]) . "'/></td>";
-            echo "<td style='width:150px'>" . $row["enemy_name"] . "</td>";
-            echo "<td style='width:250px;font-size:14px'>" . $row["enemy_desc"] . "</td>";
-            echo "<td style='width:250px'>" . $row["enemy_video"] . "</td>";
-            echo "<td style='width:150px'>" . $row["enemy_quote"] . "</td>";
+            echo "<td><img width='200' src='data:image/jpg;base64," . base64_encode($row["photo"]) . "'/></td>";
+            echo "<td style='width:150px'>" . $row["title"] . "</td>";
+            echo "<td style='width:250px;font-size:14px'>" . $row["summary"] . "</td>";
+            echo "<td style='width:250px'>" . $row["video"] . "</td>";
+            echo "<td style='width:150px'>" . $row["quote"] . "</td>";
             echo "<td>" . "<div class='link-edit-wrap'><a class='link-edit' href='enemy-edit.php?id=" . $row["id"] . "'>Editovať</a><a class='link-delete' href='enemy-delete.php?id=" . $row["id"] . "'>Vymazať</a>" . "</td>";
             echo "</tr>";
         }

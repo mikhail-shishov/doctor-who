@@ -29,11 +29,11 @@ $page = basename($_SERVER['PHP_SELF']);
   </title>
 
   <?php if (isset($meta_description)) { ?>
-    <meta name="description" content="<?php echo ($meta_description) ?>" />
-    <meta property="og:description" content="<?php echo ($meta_description) ?>" />
+    <meta name="summary" content="<?php echo ($meta_description) ?>" />
+    <meta property="og:summary" content="<?php echo ($meta_description) ?>" />
   <?php } else { ?>
-    <meta name="description" content="Viac o Doctor Who môžete dozvedieť na našej stranke." />
-    <meta property="og:description" content="Viac o Doctor Who môžete dozvedieť na našej stranke." />
+    <meta name="summary" content="Viac o Doctor Who môžete dozvedieť na našej stranke." />
+    <meta property="og:summary" content="Viac o Doctor Who môžete dozvedieť na našej stranke." />
   <?php } ?>
 
   <?php if (isset($noindex)) { ?>

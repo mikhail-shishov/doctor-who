@@ -7,11 +7,11 @@ $page_title = 'Upravovanie nepriateľa';
     $enemy = new enemy();
     $id = $_GET['id'];
     $row = $enemy->getEnemyById($id);
-    $enemy_name = $row['enemy_name'];
-    $enemy_desc = $row['enemy_desc'];
-    $enemy_photo = $row['enemy_photo'];
-    $enemy_video = $row['enemy_video'];
-    $enemy_quote = $row['enemy_quote'];
+    $title = $row['title'];
+    $summary = $row['summary'];
+    $photo = $row['photo'];
+    $video = $row['video'];
+    $quote = $row['quote'];
 ?>
 
 <div class="container">
@@ -19,23 +19,23 @@ $page_title = 'Upravovanie nepriateľa';
         <input type="hidden" value="<?php echo $row['id']; ?>">
         <label class="form-control mb-3">
             <span class="form-label">Názov nepriateľa *</span>
-            <input class="form-control mt-1 mb-2" type="text" name="enemy_name" id="enemy_name" value="<?php echo htmlspecialchars($enemy_name);?>" required>
+            <input class="form-control mt-1 mb-2" type="text" name="title" id="title" value="<?php echo htmlspecialchars($title);?>" required>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Opis *</span>
-            <input class="form-control mt-1 mb-2" type="text" name="enemy_desc" id="enemy_desc" value="<?php echo htmlspecialchars($enemy_desc);?>" required>
+            <input class="form-control mt-1 mb-2" type="text" name="summary" id="summary" value="<?php echo htmlspecialchars($summary);?>" required>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Obrazok * <b>Úpravte len pri pridavaní novej fotky!</b></span>
-            <input class="form-control" type="file" name="enemy_photo" id="enemy_photo">
+            <input class="form-control" type="file" name="photo" id="photo">
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Video, nepovinné, v tvari iframe z Youtube</span>
-            <textarea class="form-control mt-1 mb-2" name="enemy_video" id="enemy_video"><?php echo htmlspecialchars($enemy_video);?></textarea>
+            <textarea class="form-control mt-1 mb-2" name="video" id="video"><?php echo htmlspecialchars($video);?></textarea>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Cítat, nepovinné</span>
-            <textarea class="form-control mt-1 mb-2" name="enemy_quote" id="enemy_quote"><?php echo htmlspecialchars($enemy_quote);?></textarea>
+            <textarea class="form-control mt-1 mb-2" name="quote" id="quote"><?php echo htmlspecialchars($quote);?></textarea>
         </label>
         <div class="d-flex gap-2">
             <a href="/doctor-who/adm/enemy-list.php" class="btn me-auto" type="submit">Späť</a>

@@ -11,7 +11,8 @@ $page_title = 'Upravovanie Doktora';
     $actor_name = $row['actor_name'];
     $actor_photo = $row['actor_photo'];
     $years_active = $row['years_active'];
-    $doctor_desc = $row['doctor_desc'];
+    $summary = $row['summary'];
+    $placement = $row['placement'];
     $featured = $row['featured'];
 ?>
 
@@ -35,8 +36,12 @@ $page_title = 'Upravovanie Doktora';
             <input class="form-control mt-1 mb-2" type="text" name="years_active" id="years_active" value="<?php echo htmlspecialchars($years_active);?>" required>
         </label>
         <label class="form-control mb-3">
-            <span class="form-label">Meno (poradie) doktora</span>
-            <textarea class="form-control mt-1 mb-2" name="doctor_desc" id="doctor_desc" required><?php echo htmlspecialchars($doctor_desc);?></textarea>
+            <span class="form-label">Opis doktora</span>
+            <textarea class="form-control mt-1 mb-2" name="summary" id="summary" required><?php echo htmlspecialchars($summary);?></textarea>
+        </label>
+        <label class="form-control mb-3">
+            <span class="form-label">Poradie v tvaru čísla, pre zoznamy a tabuľky *</span>
+            <input class="form-control mt-1 mb-2" type="number" name="placement" id="placement" value="<?php echo htmlspecialchars($placement);?>" required>
         </label>
         <label class="form-control mb-3">
             <span class="form-label">Zobrazovať medzi najlepších/naobľubenejších</span>

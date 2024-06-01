@@ -25,3 +25,8 @@
     max-width: 250px;
     max-height: 150px;
 }
+
+.link-delete {
+    margin-top: 40px;
+    display: block;
+}
