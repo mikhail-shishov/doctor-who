@@ -106,7 +106,7 @@ class Enemy extends Database
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<td><img width='200' src='data:image/jpg;base64," . base64_encode($row["photo"]) . "'/></td>";
+            echo "<td style='width:200px'><img width='200' src='data:image/jpg;base64," . base64_encode($row["photo"]) . "'/></td>";
             echo "<td style='width:150px'>" . $row["title"] . "</td>";
             echo "<td style='width:250px;font-size:14px'>" . $row["summary"] . "</td>";
             echo "<td style='width:250px'>" . $row["video"] . "</td>";
