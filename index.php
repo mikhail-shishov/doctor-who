@@ -33,18 +33,6 @@ $lightbox = 1;
             $doctor = new Doctor();
             $doctor->getDoctorLatest();
           ?>
-          <!-- <a href="img/doctor/9.jpg" class="lightbox">
-            <img src="img/doctor/9.jpg" loading="lazy" alt="" title="9th Doctor, played by Christopher Eccleston" />
-          </a>
-          <a href="img/doctor/10.jpg" class="lightbox">
-            <img src="img/doctor/10.jpg" loading="lazy" alt="" title="10th Doctor, played by David Tennant" />
-          </a>
-          <a href="img/doctor/11.jpg" class="lightbox">
-            <img src="img/doctor/11.jpg" loading="lazy" alt="" title="11th Doctor, played by Matt Smith" />
-          </a>
-          <a href="img/doctor/12.jpg" class="lightbox">
-            <img src="img/doctor/12.jpg" loading="lazy" alt="" title="12th Doctor, played by Peter Capaldi" />
-          </a> -->
         </div>
       </div>
     </div>
